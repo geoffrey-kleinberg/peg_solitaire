@@ -11,6 +11,16 @@ class Graph:
             self.size += 1
         self.graph[u].add(v)
 
+    def delete_edge(self, u, v):
+        self.graph[u].remove(v)
+
+    def make_copy(self):
+        g = Graph()
+        g.graph = self.graph.copy()
+        g.colors = self.colors.copy()
+        g.size = self.size
+        return g
+
     
     def print_graph(self):
         for node in self.graph:
